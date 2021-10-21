@@ -6,7 +6,8 @@ print("#####q1#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
 // 以下に回答を記載
-
+$names[] = "斎藤";
+print_r($names);
 echo PHP_EOL;
 
 print("#####q2#####".PHP_EOL);
@@ -14,21 +15,31 @@ $array1 = ["dog", "cat", "fish"];
 $array2 = ["bird", "bat", "tiger"];
 
 // 以下に回答を記載
-
+print_r(array_merge($array1,$array2));
 echo PHP_EOL;
 
 print("#####q3#####".PHP_EOL);
 $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 1, 4, 5, 9];
 
 // 以下に回答を記載
-
+$count = 0;    //答えにたどり着けなかった。※復習必要
+foreach($numbers as $number) {
+    if($number === 3) {
+        $count++;
+    }
+}
+print_r($count."回");
 echo PHP_EOL;
 
 print("#####q4#####".PHP_EOL);
 $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
 
 // 以下に回答を記載
+$sports = array_diff($sports,[null]);    //答えにたどり着けなかった。※復習必要
+print_r($sports);
 
+//$unique = array_unique($sports);    //実行結果にnullのインデックス番号が残ってしまい不正解でした。
+//print_r($unique);
 echo PHP_EOL;
 
 print("#####q5#####".PHP_EOL);
@@ -36,6 +47,21 @@ $array1 = [];
 $array2 = [1, 5, 8, 10];
 
 // 以下に回答を記載
+$array1 =[];    //答えにたどり着けなかった。※復習必要
+var_export(empty($array1));
+//if(empty($array1)) {　　　//コードが長すぎた。※var_exportの方がシンプルでいい。
+  //  echo "true";
+//} else {
+  //  echo "false";
+//}
+
+$array2 =[1, 5, 8, 10];    //※$array2の値が漏れていました
+var_export(empty($array2));
+//if(empty($array2)) {　　　//コードが長すぎた。※var_exportの方がシンプルでいい。
+  //  echo "true";
+//} else {
+  //  echo "false";
+//}
 
 echo PHP_EOL;
 
@@ -43,14 +69,25 @@ print("#####q6#####".PHP_EOL);
 $numbers1 = [1, 2, 3, 4, 5];
 
 // 以下に回答を記載
+//$numbers2 = [10, 10, 10, 10, 10];     //答えにたどり着けなかった。※復習必要
+//$number = array_merge($number1 * $number2);
+//print_r($number);
 
+foreach ($numbers1 as $number) {
+    $number *= 10;
+    $numbers2[] = $number;
+}
+print_r($numbers2);
 echo PHP_EOL;
 
 print("#####q7#####".PHP_EOL);
 $array = ["1", "2", "3", "4", "5"];
 
 // 以下に回答を記載
-
+//foreach ($array as $array1) {    //答えにたどり着けなかった。※復習必要
+    //$array = (int)$array1;
+//}
+$array = array_map('intval',$array);
 // 以下は変更しないで下さい
 var_dump($array);
 
@@ -60,7 +97,11 @@ print("#####q8#####".PHP_EOL);
 $programming_languages = ["php", "ruby", "python", "javascript"];
 
 // 以下に回答を記載
+//$upper_case_programming_languages = array_change_key_case($programming_languages, CASE_UPPER);
 
+$programming_languages = ["php", "ruby", "python", "javascript"];
+$programming_languages = array_map('ucfirst', $programming_languages);
+$upper_case_programming_languages = array_map('strtoupper', $programming_languages);
 // 以下は変更しないで下さい
 print_r($programming_languages);
 echo PHP_EOL;
@@ -72,14 +113,16 @@ print("#####q9#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
 // 以下に回答を記載
-
-echo PHP_EOL;
-
-print("#####q10#####".PHP_EOL);
-$foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼", "高級なうに"];
-
-// 以下に回答を記載
-
+$count = 0;
+//foreach(numbers as $key=> $number) {    //答えにたどり着けなかった。※復習必要
+    //echo "[".$key."]"
+//}
+$names2 = [];
+foreach ($names as $key => $name) {
+    $number = $key + 1;
+    $names2[] = "会員No.".$number." ".$name;;
+}
+print_r($names2);
 echo PHP_EOL;
 
 print("#####q11#####".PHP_EOL);
