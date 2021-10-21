@@ -125,6 +125,38 @@ foreach ($names as $key => $name) {
 print_r($names2);
 echo PHP_EOL;
 
+print("#####q10#####".PHP_EOL);
+$foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼", "高級なうに"];
+
+// 以下に回答を記載
+//foreach ($foods as $food) {    //答えにたどり着けなかった。※復習必要
+    //if($food == ".うに.") {
+      //  echo "好物です";
+    //} else {
+      //  echo "まぁまぁ好きです";
+      //  echo PHP_EOL;
+    //}
+//}
+
+foreach ($foods as $food) {
+    if (strpos($food, 'うに') === false) {
+        print('まぁまぁ好きです'.PHP_EOL);
+    } else {
+        print('好物です'.PHP_EOL);
+    }
+}
+
+//回答例1
+//foreach ($foods as $food) {
+    //if (preg_match('/うに/',$food)) {
+        //print('好物です'.PHP_EOL);
+    //} else {
+        //print('まぁまぁ好きです'.PHP_EOL);
+    //}
+//}
+
+echo PHP_EOL;
+
 print("#####q11#####".PHP_EOL);
 $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
 
