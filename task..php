@@ -287,36 +287,94 @@ class User
 {
 
     // コードを追加
+//    public $name;                       //答えにたどり着けなかった。※復習必要
+//    public $age;
+//    public $gender;
+
+//    public function __construct ($name, $age, $gender) {
+//        $this->name=$name;
+//        $this->age=$age;
+//        $this->gender=$gender;
+//    }
+
+private $name;
+private $age;
+private $gender;
+
+function __construct($user_name, $user_age, $user_gender) {
+    $this->name = $user_name;
+    $this->age = $user_age;
+    $this->gender = $user_gender;
+}
+
+function info() {
+    print("名前:".$this->name.PHP_EOL);
+    print("年齢:".$this->age.PHP_EOL);
+    print("性別:".$this->gender.PHP_EOL);
+}
+
 
 }
 
 $user1 = new User("神里", 32, "男");
 $user2 = new User("あじー", 32, "男");
 
-//$user1->info();                              //※エラー表示
-//print("-------------".PHP_EOL);              //※エラー表示
-//$user2->info();                              //※エラー表示
+$user1->info();
+print("-------------".PHP_EOL);
+$user2->info();
 
 echo PHP_EOL;
 
 print("#####q18#####".PHP_EOL);
 
-// コードを追加
+//コードを追加
+//class Man {                       //答えにたどり着けなかった。※復習必要
+//    private $name;
+//    private $age;
+//    function __construct($man_name, $man_age) {
+//        $this->name=$man_name;
+//        $this->age=$man_age;
+//    }
+//    function introduce() {
+//        print("こんにちは、".$this->)
+//    }
+//}
 
-//$man1 = new Man("あじー", 32);                    //※エラー表示
-//$man2 = new Man("ゆたぼん", 10);                  //※エラー表示
+class Man
+{
 
-//$man1->introduce();                              //※エラー表示
-//$man2->introduce();                              //※エラー表示
+    private $name;
+    private $age;
 
+    function __construct($user_name, $user_age) {
+        $this->name = $user_name;
+        $this->age = $user_age;
+    }
+
+    function introduce() {
+        if ($this->age >= 20) {
+            print("こんにちは,".$this->name."と申します。宜しくお願いいたします。".PHP_EOL);
+        } else {
+            print("はいさいまいど〜、".$this->name."です！！！".PHP_EOL);
+        }
+    }
+
+}
+
+
+$man1 = new Man("あじー", 32);
+$man2 = new Man("ゆたぼん", 10);
+
+$man1->introduce();
+$man2->introduce();
 echo PHP_EOL;
 
 print("#####q19#####".PHP_EOL);
 class Item
 {
     // 以下を修正して下さい
-
-    protected $name;
+    public $name;                       //答えにたどり着けなかった。※復習必要
+    //protected $name;
 
     function __construct($book_name){
         $this->name = $book_name;
@@ -325,7 +383,7 @@ class Item
 // 以下は変更しないで下さい
 
 $book = new Item("ゼロ秒思考");
-//print($book->name.PHP_EOL);                     //※エラー表示
+print($book->name.PHP_EOL);
 
 echo PHP_EOL;
 
@@ -354,7 +412,7 @@ $human4 = new Human("ぎん", 108);
 $humans = [$human1, $human2, $human3, $human4];
 
 foreach ($humans as $human) {
-//    $zoo->info_entry_fee($human);                //※エラー表示
+    $zoo->info_entry_fee($human);
 }
 
 echo PHP_EOL;
